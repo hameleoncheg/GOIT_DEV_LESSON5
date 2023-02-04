@@ -1,3 +1,5 @@
+package dataDto;
+
 import java.util.Date;
 
 public class YoungestEldestWorkers {
@@ -13,7 +15,7 @@ public class YoungestEldestWorkers {
 
     @Override
     public String toString() {
-        return "YoungestEldestWorkers{" +
+        return "dataDto.YoungestEldestWorkers{" +
                 "type='" + type + '\'' +
                 ", name='" + name + '\'' +
                 ", birthday=" + birthday +

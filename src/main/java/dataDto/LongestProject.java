@@ -1,3 +1,5 @@
+package dataDto;
+
 public class LongestProject {
     private String name;
     private int month_count;
@@ -9,7 +11,7 @@ public class LongestProject {
 
     @Override
     public String toString() {
-        return "LongestProject{" +
+        return "dataDto.LongestProject{" +
                 "name='" + name + '\'' +
                 ", month_count=" + month_count +
                 '}';

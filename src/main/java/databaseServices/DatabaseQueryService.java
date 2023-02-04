@@ -1,3 +1,7 @@
+package databaseServices;
+
+import dataDto.*;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
@@ -24,6 +28,7 @@ public class DatabaseQueryService {
             int project_count = rs.getInt("project_count");
             maxProjectCountClients.add(new MaxProjectCountClient(rs.getString("name"), rs.getInt("project_count")));
         }
+        database.close();
         return maxProjectCountClients;
     }
 
@@ -46,6 +51,7 @@ public class DatabaseQueryService {
             int salary = rs.getInt("salary");
             MaxSalaryWorker.add(new MaxSalaryWorker(rs.getString("name"), rs.getInt("salary")));
         }
+        database.close();
         return MaxSalaryWorker;
     }
 
@@ -69,6 +75,7 @@ public class DatabaseQueryService {
             Date birthday = rs.getDate("birthday");
             YoungestEldestWorkers.add(new YoungestEldestWorkers(rs.getString("type"), rs.getString("name"), rs.getDate("birthday")));
         }
+        database.close();
         return YoungestEldestWorkers;
     }
 
@@ -91,6 +98,7 @@ public class DatabaseQueryService {
             long price = rs.getLong("price");
             ProjectPrices.add(new ProjectPrices(rs.getString("name"), rs.getLong("price")));
         }
+        database.close();
         return ProjectPrices;
     }
 
@@ -113,6 +121,7 @@ public class DatabaseQueryService {
             int month_count = rs.getInt("month_count");
             LongestProject.add(new LongestProject(rs.getString("name"), rs.getInt("month_count")));
         }
+        database.close();
         return LongestProject;
     }
 

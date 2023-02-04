@@ -1,3 +1,5 @@
+package dataDto;
+
 public class MaxProjectCountClient {
     private String name;
     private int project_count;
@@ -9,7 +11,7 @@ public class MaxProjectCountClient {
 
     @Override
     public String toString() {
-        return "MaxProjectCountClient{" +
+        return "dataDto.MaxProjectCountClient{" +
                 "name='" + name + '\'' +
                 ", project_count=" + project_count +
                 '}';

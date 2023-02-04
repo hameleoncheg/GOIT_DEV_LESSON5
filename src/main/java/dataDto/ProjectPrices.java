@@ -1,3 +1,5 @@
+package dataDto;
+
 public class ProjectPrices {
     private String name;
     private long price;
@@ -9,7 +11,7 @@ public class ProjectPrices {
 
     @Override
     public String toString() {
-        return "ProjectPrices{" +
+        return "dataDto.ProjectPrices{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 '}';

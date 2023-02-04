@@ -1,3 +1,5 @@
+package dataDto;
+
 public class MaxSalaryWorker {
     private final String name;
     private final int salary;
@@ -9,7 +11,7 @@ public class MaxSalaryWorker {
 
     @Override
     public String toString() {
-        return "MaxSalaryWorker{" +
+        return "dataDto.MaxSalaryWorker{" +
                 "name='" + name + '\'' +
                 ", salary=" + salary +
                 '}';
