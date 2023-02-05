@@ -21,15 +21,6 @@ public class Database {
         return INSTANCE;
     }
 
-    public int executeUpdate(String sql) {
-        try (Statement st = connection.createStatement()) {
-            return st.executeUpdate(sql);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return -1;
-        }
-    }
-
     public Connection getConnection() {
         try {
             if (connection.isClosed()) {
@@ -40,7 +31,6 @@ public class Database {
         }
         return connection;
     }
-
     public void close() {
         try {
             connection.close();

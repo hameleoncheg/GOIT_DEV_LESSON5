@@ -1,7 +1,5 @@
 package databaseServices;
-
 import dataDto.*;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
@@ -41,6 +39,7 @@ public class DatabaseQueryService {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        database.close();
         return MaxSalaryWorker;
     }
 
@@ -66,7 +65,6 @@ public class DatabaseQueryService {
     public List<ProjectPrices> printProjectPrices() throws SQLException {
         List<ProjectPrices> ProjectPrices = new ArrayList<>();
         Database database = Database.getInstance();
-
         String content = null;
         try (Connection connection = database.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(ReadFile.readFile("sql/print_project_prices.sql", StandardCharsets.UTF_8));
