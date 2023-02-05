@@ -10,7 +10,7 @@ public class Database {
         try {
             String dbUrl = "jdbc:postgresql://localhost:5432/init_db";
             String dbUser = "postgres";
-            String dbPass = "Bua!ash098";
+            String dbPass = "postgres";
             connection = DriverManager.getConnection(dbUrl, dbUser, dbPass);
         } catch (Exception ex) {
             ex.printStackTrace();
