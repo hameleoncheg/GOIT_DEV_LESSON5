@@ -5,12 +5,12 @@ import java.sql.*;
 public class Database {
     private static final Database INSTANCE = new Database();
     private Connection connection;
+    String dbUrl = "jdbc:postgresql://localhost:5432/init_db";
+    String dbUser = "postgres";
+    String dbPass = "postgres";
 
     private Database() {
         try {
-            String dbUrl = "jdbc:postgresql://localhost:5432/init_db";
-            String dbUser = "postgres";
-            String dbPass = "postgres";
             connection = DriverManager.getConnection(dbUrl, dbUser, dbPass);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -31,6 +31,13 @@ public class Database {
     }
 
     public Connection getConnection() {
+        try {
+            if (connection.isClosed()) {
+                connection = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return connection;
     }
 
