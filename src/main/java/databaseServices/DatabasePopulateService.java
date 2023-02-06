@@ -8,22 +8,13 @@ import java.sql.SQLException;
 
 public class DatabasePopulateService {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
-        String filePath = "sql/populate_db.sql";
-
-        String content = null;
-        try {
-            content = ReadFile.readFile(filePath, StandardCharsets.UTF_8);
-        } catch (IOException e) {
+        try (Connection connection = Database.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(ReadFile.readFile("sql/populate_db.sql", StandardCharsets.UTF_8))) {
+             preparedStatement.executeUpdate();
+        } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
-
-        Database database = Database.getInstance();
-        Connection connection = database.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(content);
-        preparedStatement.executeUpdate();
-        database.close();
     }
-
 }

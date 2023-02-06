@@ -1,4 +1,5 @@
 package databaseServices;
+
 import dataDto.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -39,7 +40,6 @@ public class DatabaseQueryService {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        database.close();
         return MaxSalaryWorker;
     }
 
